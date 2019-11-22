@@ -12,9 +12,10 @@ if("-a" %in% file_names){
   file_names <- Sys.glob(str_c(folder, "/*.csv"))
   
   if(length(file_names) == 0){
-    print("No files found in the specified folder!")
-  } #helps us to figure out silent errors
-} else {file_names <- file_names}
+    print("please provide a list of .csv files
+          
+          to specify all .csv files, use -a and a data directory as input")
+  } } else {file_names <- file_names}
 
 #code will look in the designated folder and take all the .csv files and list them
 #if not in folder than file names stay file names
