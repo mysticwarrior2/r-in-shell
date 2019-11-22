@@ -7,6 +7,14 @@ require("stringr")
 
 file_names <- commandArgs(trailingOnly = TRUE)
 
+if("-a" %in% file_names){ 
+  folder <- file_names[2]
+  file_names <- Sys.glob(str_c(folder, "/*.csv"))
+} else {file_names <- file_names}
+
+#code will look in the designated folder and take all the .csv files and list them
+#if not in folder than file names stay file names
+
 for (file in file_names)
 {
 
