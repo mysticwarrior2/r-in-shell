@@ -10,6 +10,10 @@ file_names <- commandArgs(trailingOnly = TRUE)
 if("-a" %in% file_names){ 
   folder <- file_names[2]
   file_names <- Sys.glob(str_c(folder, "/*.csv"))
+  
+  if(length(file_names) == 0){
+    print("No files found in the specified folder!")
+  } #helps us to figure out silent errors
 } else {file_names <- file_names}
 
 #code will look in the designated folder and take all the .csv files and list them
